@@ -1,8 +1,8 @@
 ../Drivers/Motor/Src/Motor.cpp:10:1:Motor::Motor(uint32_t, uint32_t)	24	static
 ../Drivers/Motor/Src/Motor.cpp:17:1:Motor::~Motor()	16	static
 ../Drivers/Motor/Src/Motor.cpp:17:1:virtual Motor::~Motor()	16	static
-../Drivers/Motor/Src/Motor.cpp:21:6:void Motor::setSpeed(uint16_t)	16	static
-../Drivers/Motor/Src/Motor.cpp:24:6:void Motor::setLeft()	16	static
-../Drivers/Motor/Src/Motor.cpp:28:6:void Motor::setRight()	16	static
-../Drivers/Motor/Src/Motor.cpp:32:6:void Motor::setBreak()	16	static
-../Drivers/Motor/Src/Motor.cpp:36:6:void Motor::setForward(uint16_t)	16	static
+../Drivers/Motor/Src/Motor.cpp:19:6:void Motor::setSpeed(uint16_t)	16	static
+../Drivers/Motor/Src/Motor.cpp:22:6:void Motor::setLeft()	16	static
+../Drivers/Motor/Src/Motor.cpp:26:6:void Motor::setRight()	16	static
+../Drivers/Motor/Src/Motor.cpp:30:6:void Motor::setBreak()	16	static
+../Drivers/Motor/Src/Motor.cpp:34:6:void Motor::setForward(uint16_t)	16	static

@@ -1,4 +1,8 @@
-../Core/Src/main.cpp:71:16:int main()	6
-../Core/Src/main.cpp:139:6:void SystemClock_Config()	3
-../Core/Src/main.cpp:175:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	2
-../Core/Src/main.cpp:189:6:void Error_Handler()	1
+../Core/Src/main.cpp:71:16:int main()	2
+../Core/Src/main.cpp:125:6:void SystemClock_Config()	3
+../Core/Src/main.cpp:161:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	2
+../Core/Src/main.cpp:175:6:void Error_Handler()	1
+../Core/Src/main.cpp:184:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/main.cpp:184:1:void __static_initialization_and_destruction_1()	1
+../Core/Src/main.cpp:184:1:cpp)	1
+../Core/Src/main.cpp:184:1:cpp)	1

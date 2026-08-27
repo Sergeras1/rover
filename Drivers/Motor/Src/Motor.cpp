@@ -14,9 +14,7 @@ Motor::Motor(uint32_t channel_1, uint32_t channel_2) : ch_1(channel_1), ch_2(cha
 	  HAL_TIM_PWM_Start(&htim2, ch_2);
 }
 
-Motor::~Motor() {
-	// TODO Auto-generated destructor stub
-}
+Motor::~Motor() {}
 
 void Motor::setSpeed(const uint16_t speed){
 	///

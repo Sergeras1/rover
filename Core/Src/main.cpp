@@ -20,14 +20,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//extern "C" {
-//	#include "main.h"
-//	#include "tim.h"
-//	#include "gpio.h"
-//
-//}
+
 #include "Motor.h"
+#include "Process.h"
+#include "Parser.h"
 #include "usart.h"
+#include "array"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BUFFER_SIZE 32
+#define BUFFER_SIZE 7
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,9 +46,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-volatile uint16_t speed = 200;
 volatile uint8_t flag = 0;
-uint8_t buff = 0;
+uint8_t buff[BUFFER_SIZE] = {0};
+std::array<uint8_t, 7> arr;
+uint8_t simbol = 0;
+Parser pars;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -98,7 +98,8 @@ extern "C" int main(void)
 
   MX_USART1_UART_Init();
   Motor motor(TIM_CHANNEL_1, TIM_CHANNEL_2);
-  HAL_UART_Receive_IT(&huart1, &buff, 1);
+  Process process;
+  HAL_UART_Receive_IT(&huart1, &simbol, 1);
 
   /* USER CODE END 2 */
 
@@ -110,24 +111,9 @@ extern "C" int main(void)
 
     /* USER CODE BEGIN 3 */
 	if(flag == 1){
-	  switch(buff){
-	  case 'f':
-		  motor.setForward(500);
-		  break;
-	  case 'r':
-		  motor.setRight();
-		  break;
-	  case 'l':
-		  motor.setLeft();
-		  break;
-	  case 'b':
-		  motor.setBreak();
-		  break;
-	  }
-	  flag = 0;
+		process.state(buff);
+		flag = 0;
 	}
-
-  //HAL_UART_Receive(&huart1, &buff, 1, 1000);
   }
   /* USER CODE END 3 */
 }
@@ -176,8 +162,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if (huart->Instance == USART1)
   {
-	  flag = 1;
-	  HAL_UART_Receive_IT(&huart1, &buff, 1);
+	  HAL_UART_Receive_IT(&huart1, &simbol, 1);
+	  flag = pars.agregator(buff, simbol, BUFFER_SIZE);
   }
 }
 /* USER CODE END 4 */
