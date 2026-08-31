@@ -26,17 +26,3 @@ void Parser::parsing(uint8_t* str, uint8_t* cmd, uint16_t* pwm){
 	  buff[j] = '\0';
 	  *pwm = atoi(buff);
 }
-uint8_t Parser::agregator(uint8_t* buffer, uint8_t value, uint8_t size){
-	  static uint16_t len = 0;
-	  if(buffer == nullptr){
-		  return 0;
-	  }
-	  if(len < size - 1){
-		  buffer[len++] = value;
-	  }
-	  else{
-	    len = 0;
-	    return 1;
-	  }
-	  return 0;
-}

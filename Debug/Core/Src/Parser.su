@@ -2,4 +2,3 @@
 ../Core/Src/Parser.cpp:12:1:Parser::~Parser()	16	static
 ../Core/Src/Parser.cpp:12:1:virtual Parser::~Parser()	16	static
 ../Core/Src/Parser.cpp:14:6:void Parser::parsing(uint8_t*, uint8_t*, uint16_t*)	40	static
-../Core/Src/Parser.cpp:29:9:uint8_t Parser::agregator(uint8_t*, uint8_t, uint8_t)	24	static

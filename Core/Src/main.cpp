@@ -35,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BUFFER_SIZE 7
+#define BUFFER_SIZE 10
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,7 +48,6 @@
 /* USER CODE BEGIN PV */
 volatile uint8_t flag = 0;
 uint8_t buff[BUFFER_SIZE] = {0};
-std::array<uint8_t, 7> arr;
 uint8_t simbol = 0;
 Parser pars;
 /* USER CODE END PV */
@@ -99,7 +98,9 @@ extern "C" int main(void)
   MX_USART1_UART_Init();
   Motor motor(TIM_CHANNEL_1, TIM_CHANNEL_2);
   Process process;
-  HAL_UART_Receive_IT(&huart1, &simbol, 1);
+  //HAL_UART_Receive_IT(&huart1, buff, BUFFER_SIZE);
+  HAL_UARTEx_ReceiveToIdle_IT(&huart1, buff, BUFFER_SIZE);
+
 
   /* USER CODE END 2 */
 
@@ -158,12 +159,12 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
   if (huart->Instance == USART1)
   {
-	  HAL_UART_Receive_IT(&huart1, &simbol, 1);
-	  flag = pars.agregator(buff, simbol, BUFFER_SIZE);
+	  HAL_UARTEx_ReceiveToIdle_IT(&huart1, buff, BUFFER_SIZE);
+	  flag = 1;
   }
 }
 /* USER CODE END 4 */
