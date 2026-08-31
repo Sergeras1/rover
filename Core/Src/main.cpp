@@ -25,7 +25,6 @@
 #include "Process.h"
 #include "Parser.h"
 #include "usart.h"
-#include "array"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

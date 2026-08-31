@@ -27,11 +27,22 @@ void Motor::setRight(){
 	TIM2->CCR1 = 0;
 	TIM2->CCR2 = 600;
 }
-void Motor::setBreak(){
+void Motor::setStop(){
 	TIM2->CCR1 = 0;
 	TIM2->CCR2 = 0;
+	TIM2->CCR3 = 0;
+	TIM2->CCR4 = 0;
 }
 void Motor::setForward(const uint16_t speed){
 	TIM2->CCR1 = speed;
 	TIM2->CCR2 = speed;
 }
+void Motor::setBack(const uint16_t speed){
+	if(TIM2->CCR1 > 0 && TIM2->CCR2 >0){
+		TIM2->CCR1 = 0;
+		TIM2->CCR2 = 0;
+	}
+	TIM2->CCR3 = speed;
+	TIM2->CCR4 = speed;
+}
+

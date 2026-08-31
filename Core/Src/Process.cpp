@@ -18,8 +18,11 @@ void Process::state(uint8_t* buff){
 	  case 'l':
 		  motor.setLeft();
 		  break;
+	  case 's':
+		  motor.setStop();
+		  break;
 	  case 'b':
-		  motor.setBreak();
+		  motor.setBack(pwm);
 		  break;
 	  default:
 		  break;

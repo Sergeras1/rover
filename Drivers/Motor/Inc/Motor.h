@@ -16,8 +16,9 @@ public:
 	void setSpeed(const uint16_t speed);
 	void setLeft();
 	void setRight();
-	void setBreak();
+	void setStop();
 	void setForward(const uint16_t speed);
+	void setBack(const uint16_t speed);
 };
 
 #endif /* MOTOR_H_ */
