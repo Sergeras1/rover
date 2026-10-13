@@ -97,7 +97,7 @@ extern "C" int main(void)
   MX_USART1_UART_Init();
   Motor motor(TIM_CHANNEL_1, TIM_CHANNEL_2);
   Process process;
-  //HAL_UART_Receive_IT(&huart1, buff, BUFFER_SIZE);
+
   HAL_UARTEx_ReceiveToIdle_IT(&huart1, buff, BUFFER_SIZE);
 
 

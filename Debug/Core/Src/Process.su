@@ -1,4 +1,5 @@
 ../Core/Src/Process.cpp:3:1:Process::Process()	16	static
 ../Core/Src/Process.cpp:5:1:Process::~Process()	16	static
 ../Core/Src/Process.cpp:5:1:virtual Process::~Process()	16	static
-../Core/Src/Process.cpp:7:6:void Process::state(uint8_t*)	24	static
+../Core/Src/Process.cpp:7:16:Process::State Process::fsm(Command)	16	static
+../Core/Src/Process.cpp:116:6:void Process::state(uint8_t*)	24	static
