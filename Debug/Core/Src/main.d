@@ -25,8 +25,9 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Drivers/Motor/Inc/Motor.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/gpio.h ../Core/Inc/Process.h ../Core/Inc/Parser.h \
- ../Core/Inc/Parser.h ../Core/Inc/usart.h
+ ../Core/Inc/gpio.h ../Core/Inc/Process.h \
+ /home/sergey/project/STM32/robot/robot/Drivers/Parser/Inc/Parser.h \
+ ../Core/Inc/usart.h
 ../Drivers/Motor/Inc/Motor.h:
 ../Core/Inc/tim.h:
 ../Core/Inc/main.h:
@@ -57,6 +58,5 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Drivers/Motor/Inc/Motor.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/gpio.h:
 ../Core/Inc/Process.h:
-../Core/Inc/Parser.h:
-../Core/Inc/Parser.h:
+/home/sergey/project/STM32/robot/robot/Drivers/Parser/Inc/Parser.h:
 ../Core/Inc/usart.h:
