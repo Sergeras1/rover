@@ -173,7 +173,7 @@ Process::State Process::fsm(Command cmd) {
         case State::Idle:
             if (cmd == Command::Forward) {
  8000204:	683b      	ldr	r3, [r7, #0]
- 8000206:	2b01      	cmp	r3, #1
+ 8000206:	2b66      	cmp	r3, #102	@ 0x66
  8000208:	d103      	bne.n	8000212 <_ZN7Process3fsmENS_7CommandE+0x42>
                 _state = State::Forward;
  800020a:	4b71      	ldr	r3, [pc, #452]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -188,7 +188,7 @@ Process::State Process::fsm(Command cmd) {
  8000210:	e0cc      	b.n	80003ac <_ZN7Process3fsmENS_7CommandE+0x1dc>
             else if (cmd == Command::Right) {
  8000212:	683b      	ldr	r3, [r7, #0]
- 8000214:	2b02      	cmp	r3, #2
+ 8000214:	2b72      	cmp	r3, #114	@ 0x72
  8000216:	d103      	bne.n	8000220 <_ZN7Process3fsmENS_7CommandE+0x50>
                 _state = State::Right;
  8000218:	4b6d      	ldr	r3, [pc, #436]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -198,7 +198,7 @@ Process::State Process::fsm(Command cmd) {
  800021e:	e0c5      	b.n	80003ac <_ZN7Process3fsmENS_7CommandE+0x1dc>
             else if (cmd == Command::Left) {
  8000220:	683b      	ldr	r3, [r7, #0]
- 8000222:	2b03      	cmp	r3, #3
+ 8000222:	2b6c      	cmp	r3, #108	@ 0x6c
  8000224:	d103      	bne.n	800022e <_ZN7Process3fsmENS_7CommandE+0x5e>
                 _state = State::Left;
  8000226:	4b6a      	ldr	r3, [pc, #424]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -208,7 +208,7 @@ Process::State Process::fsm(Command cmd) {
  800022c:	e0be      	b.n	80003ac <_ZN7Process3fsmENS_7CommandE+0x1dc>
             else if (cmd == Command::Back) {
  800022e:	683b      	ldr	r3, [r7, #0]
- 8000230:	2b04      	cmp	r3, #4
+ 8000230:	2b62      	cmp	r3, #98	@ 0x62
  8000232:	d103      	bne.n	800023c <_ZN7Process3fsmENS_7CommandE+0x6c>
                 _state = State::Back;
  8000234:	4b66      	ldr	r3, [pc, #408]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -218,7 +218,7 @@ Process::State Process::fsm(Command cmd) {
  800023a:	e0b7      	b.n	80003ac <_ZN7Process3fsmENS_7CommandE+0x1dc>
             else if (cmd == Command::Stop) {
  800023c:	683b      	ldr	r3, [r7, #0]
- 800023e:	2b05      	cmp	r3, #5
+ 800023e:	2b73      	cmp	r3, #115	@ 0x73
  8000240:	f040 80b4 	bne.w	80003ac <_ZN7Process3fsmENS_7CommandE+0x1dc>
                 _state = State::Stop;
  8000244:	4b62      	ldr	r3, [pc, #392]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -244,7 +244,7 @@ Process::State Process::fsm(Command cmd) {
  8000258:	e0aa      	b.n	80003b0 <_ZN7Process3fsmENS_7CommandE+0x1e0>
             else if (cmd == Command::Right) {
  800025a:	683b      	ldr	r3, [r7, #0]
- 800025c:	2b02      	cmp	r3, #2
+ 800025c:	2b72      	cmp	r3, #114	@ 0x72
  800025e:	d103      	bne.n	8000268 <_ZN7Process3fsmENS_7CommandE+0x98>
                 _state = State::Right;
  8000260:	4b5b      	ldr	r3, [pc, #364]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -254,7 +254,7 @@ Process::State Process::fsm(Command cmd) {
  8000266:	e0a3      	b.n	80003b0 <_ZN7Process3fsmENS_7CommandE+0x1e0>
             else if (cmd == Command::Left) {
  8000268:	683b      	ldr	r3, [r7, #0]
- 800026a:	2b03      	cmp	r3, #3
+ 800026a:	2b6c      	cmp	r3, #108	@ 0x6c
  800026c:	d103      	bne.n	8000276 <_ZN7Process3fsmENS_7CommandE+0xa6>
                 _state = State::Left;
  800026e:	4b58      	ldr	r3, [pc, #352]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -264,7 +264,7 @@ Process::State Process::fsm(Command cmd) {
  8000274:	e09c      	b.n	80003b0 <_ZN7Process3fsmENS_7CommandE+0x1e0>
             else if (cmd == Command::Back) {
  8000276:	683b      	ldr	r3, [r7, #0]
- 8000278:	2b04      	cmp	r3, #4
+ 8000278:	2b62      	cmp	r3, #98	@ 0x62
  800027a:	d103      	bne.n	8000284 <_ZN7Process3fsmENS_7CommandE+0xb4>
                 _state = State::Back;
  800027c:	4b54      	ldr	r3, [pc, #336]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -274,7 +274,7 @@ Process::State Process::fsm(Command cmd) {
  8000282:	e095      	b.n	80003b0 <_ZN7Process3fsmENS_7CommandE+0x1e0>
             else if (cmd == Command::Stop) {
  8000284:	683b      	ldr	r3, [r7, #0]
- 8000286:	2b05      	cmp	r3, #5
+ 8000286:	2b73      	cmp	r3, #115	@ 0x73
  8000288:	f040 8092 	bne.w	80003b0 <_ZN7Process3fsmENS_7CommandE+0x1e0>
                 _state = State::Stop;
  800028c:	4b50      	ldr	r3, [pc, #320]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -300,7 +300,7 @@ Process::State Process::fsm(Command cmd) {
  80002a0:	e088      	b.n	80003b4 <_ZN7Process3fsmENS_7CommandE+0x1e4>
             else if (cmd == Command::Forward) {
  80002a2:	683b      	ldr	r3, [r7, #0]
- 80002a4:	2b01      	cmp	r3, #1
+ 80002a4:	2b66      	cmp	r3, #102	@ 0x66
  80002a6:	d103      	bne.n	80002b0 <_ZN7Process3fsmENS_7CommandE+0xe0>
                 _state = State::Forward;
  80002a8:	4b49      	ldr	r3, [pc, #292]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -310,7 +310,7 @@ Process::State Process::fsm(Command cmd) {
  80002ae:	e081      	b.n	80003b4 <_ZN7Process3fsmENS_7CommandE+0x1e4>
             else if (cmd == Command::Left) {
  80002b0:	683b      	ldr	r3, [r7, #0]
- 80002b2:	2b03      	cmp	r3, #3
+ 80002b2:	2b6c      	cmp	r3, #108	@ 0x6c
  80002b4:	d103      	bne.n	80002be <_ZN7Process3fsmENS_7CommandE+0xee>
                 _state = State::Left;
  80002b6:	4b46      	ldr	r3, [pc, #280]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -320,7 +320,7 @@ Process::State Process::fsm(Command cmd) {
  80002bc:	e07a      	b.n	80003b4 <_ZN7Process3fsmENS_7CommandE+0x1e4>
             else if (cmd == Command::Back) {
  80002be:	683b      	ldr	r3, [r7, #0]
- 80002c0:	2b04      	cmp	r3, #4
+ 80002c0:	2b62      	cmp	r3, #98	@ 0x62
  80002c2:	d103      	bne.n	80002cc <_ZN7Process3fsmENS_7CommandE+0xfc>
                 _state = State::Back;
  80002c4:	4b42      	ldr	r3, [pc, #264]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -330,7 +330,7 @@ Process::State Process::fsm(Command cmd) {
  80002ca:	e073      	b.n	80003b4 <_ZN7Process3fsmENS_7CommandE+0x1e4>
             else if (cmd == Command::Stop) {
  80002cc:	683b      	ldr	r3, [r7, #0]
- 80002ce:	2b05      	cmp	r3, #5
+ 80002ce:	2b73      	cmp	r3, #115	@ 0x73
  80002d0:	d170      	bne.n	80003b4 <_ZN7Process3fsmENS_7CommandE+0x1e4>
                 _state = State::Stop;
  80002d2:	4b3f      	ldr	r3, [pc, #252]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -356,7 +356,7 @@ Process::State Process::fsm(Command cmd) {
  80002e6:	e067      	b.n	80003b8 <_ZN7Process3fsmENS_7CommandE+0x1e8>
             else if (cmd == Command::Forward) {
  80002e8:	683b      	ldr	r3, [r7, #0]
- 80002ea:	2b01      	cmp	r3, #1
+ 80002ea:	2b66      	cmp	r3, #102	@ 0x66
  80002ec:	d103      	bne.n	80002f6 <_ZN7Process3fsmENS_7CommandE+0x126>
                 _state = State::Forward;
  80002ee:	4b38      	ldr	r3, [pc, #224]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -366,7 +366,7 @@ Process::State Process::fsm(Command cmd) {
  80002f4:	e060      	b.n	80003b8 <_ZN7Process3fsmENS_7CommandE+0x1e8>
             else if (cmd == Command::Right) {
  80002f6:	683b      	ldr	r3, [r7, #0]
- 80002f8:	2b02      	cmp	r3, #2
+ 80002f8:	2b72      	cmp	r3, #114	@ 0x72
  80002fa:	d103      	bne.n	8000304 <_ZN7Process3fsmENS_7CommandE+0x134>
                 _state = State::Right;
  80002fc:	4b34      	ldr	r3, [pc, #208]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -376,7 +376,7 @@ Process::State Process::fsm(Command cmd) {
  8000302:	e059      	b.n	80003b8 <_ZN7Process3fsmENS_7CommandE+0x1e8>
             else if (cmd == Command::Back) {
  8000304:	683b      	ldr	r3, [r7, #0]
- 8000306:	2b04      	cmp	r3, #4
+ 8000306:	2b62      	cmp	r3, #98	@ 0x62
  8000308:	d103      	bne.n	8000312 <_ZN7Process3fsmENS_7CommandE+0x142>
                 _state = State::Back;
  800030a:	4b31      	ldr	r3, [pc, #196]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -386,7 +386,7 @@ Process::State Process::fsm(Command cmd) {
  8000310:	e052      	b.n	80003b8 <_ZN7Process3fsmENS_7CommandE+0x1e8>
             else if (cmd == Command::Stop) {
  8000312:	683b      	ldr	r3, [r7, #0]
- 8000314:	2b05      	cmp	r3, #5
+ 8000314:	2b73      	cmp	r3, #115	@ 0x73
  8000316:	d14f      	bne.n	80003b8 <_ZN7Process3fsmENS_7CommandE+0x1e8>
                 _state = State::Stop;
  8000318:	4b2d      	ldr	r3, [pc, #180]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -412,7 +412,7 @@ Process::State Process::fsm(Command cmd) {
  800032c:	e046      	b.n	80003bc <_ZN7Process3fsmENS_7CommandE+0x1ec>
             else if (cmd == Command::Forward) {
  800032e:	683b      	ldr	r3, [r7, #0]
- 8000330:	2b01      	cmp	r3, #1
+ 8000330:	2b66      	cmp	r3, #102	@ 0x66
  8000332:	d103      	bne.n	800033c <_ZN7Process3fsmENS_7CommandE+0x16c>
                 _state = State::Forward;
  8000334:	4b26      	ldr	r3, [pc, #152]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -422,7 +422,7 @@ Process::State Process::fsm(Command cmd) {
  800033a:	e03f      	b.n	80003bc <_ZN7Process3fsmENS_7CommandE+0x1ec>
             else if (cmd == Command::Right) {
  800033c:	683b      	ldr	r3, [r7, #0]
- 800033e:	2b02      	cmp	r3, #2
+ 800033e:	2b72      	cmp	r3, #114	@ 0x72
  8000340:	d103      	bne.n	800034a <_ZN7Process3fsmENS_7CommandE+0x17a>
                 _state = State::Right;
  8000342:	4b23      	ldr	r3, [pc, #140]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -432,7 +432,7 @@ Process::State Process::fsm(Command cmd) {
  8000348:	e038      	b.n	80003bc <_ZN7Process3fsmENS_7CommandE+0x1ec>
             else if (cmd == Command::Left) {
  800034a:	683b      	ldr	r3, [r7, #0]
- 800034c:	2b03      	cmp	r3, #3
+ 800034c:	2b6c      	cmp	r3, #108	@ 0x6c
  800034e:	d103      	bne.n	8000358 <_ZN7Process3fsmENS_7CommandE+0x188>
                 _state = State::Left;
  8000350:	4b1f      	ldr	r3, [pc, #124]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -442,7 +442,7 @@ Process::State Process::fsm(Command cmd) {
  8000356:	e031      	b.n	80003bc <_ZN7Process3fsmENS_7CommandE+0x1ec>
             else if (cmd == Command::Stop) {
  8000358:	683b      	ldr	r3, [r7, #0]
- 800035a:	2b05      	cmp	r3, #5
+ 800035a:	2b73      	cmp	r3, #115	@ 0x73
  800035c:	d12e      	bne.n	80003bc <_ZN7Process3fsmENS_7CommandE+0x1ec>
                 _state = State::Stop;
  800035e:	4b1c      	ldr	r3, [pc, #112]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -468,7 +468,7 @@ Process::State Process::fsm(Command cmd) {
  8000372:	e025      	b.n	80003c0 <_ZN7Process3fsmENS_7CommandE+0x1f0>
             else if (cmd == Command::Forward) {
  8000374:	683b      	ldr	r3, [r7, #0]
- 8000376:	2b01      	cmp	r3, #1
+ 8000376:	2b66      	cmp	r3, #102	@ 0x66
  8000378:	d103      	bne.n	8000382 <_ZN7Process3fsmENS_7CommandE+0x1b2>
                 _state = State::Forward;
  800037a:	4b15      	ldr	r3, [pc, #84]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -478,7 +478,7 @@ Process::State Process::fsm(Command cmd) {
  8000380:	e01e      	b.n	80003c0 <_ZN7Process3fsmENS_7CommandE+0x1f0>
             else if (cmd == Command::Right) {
  8000382:	683b      	ldr	r3, [r7, #0]
- 8000384:	2b02      	cmp	r3, #2
+ 8000384:	2b72      	cmp	r3, #114	@ 0x72
  8000386:	d103      	bne.n	8000390 <_ZN7Process3fsmENS_7CommandE+0x1c0>
                 _state = State::Right;
  8000388:	4b11      	ldr	r3, [pc, #68]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -488,7 +488,7 @@ Process::State Process::fsm(Command cmd) {
  800038e:	e017      	b.n	80003c0 <_ZN7Process3fsmENS_7CommandE+0x1f0>
             else if (cmd == Command::Left) {
  8000390:	683b      	ldr	r3, [r7, #0]
- 8000392:	2b03      	cmp	r3, #3
+ 8000392:	2b6c      	cmp	r3, #108	@ 0x6c
  8000394:	d103      	bne.n	800039e <_ZN7Process3fsmENS_7CommandE+0x1ce>
                 _state = State::Left;
  8000396:	4b0e      	ldr	r3, [pc, #56]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
@@ -498,7 +498,7 @@ Process::State Process::fsm(Command cmd) {
  800039c:	e010      	b.n	80003c0 <_ZN7Process3fsmENS_7CommandE+0x1f0>
             else if (cmd == Command::Back) {
  800039e:	683b      	ldr	r3, [r7, #0]
- 80003a0:	2b04      	cmp	r3, #4
+ 80003a0:	2b62      	cmp	r3, #98	@ 0x62
  80003a2:	d10d      	bne.n	80003c0 <_ZN7Process3fsmENS_7CommandE+0x1f0>
                 _state = State::Back;
  80003a4:	4b0a      	ldr	r3, [pc, #40]	@ (80003d0 <_ZN7Process3fsmENS_7CommandE+0x200>)
